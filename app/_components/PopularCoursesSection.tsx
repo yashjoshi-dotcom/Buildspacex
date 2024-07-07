@@ -54,8 +54,8 @@ function PopularCoursesSection() {
 							starRating={4}
 						/>
 					</CarouselContent>
-					<CarouselPrevious className="left-auto right-20 top-[105%] shadow-lg" />
-					<CarouselNext className="right-8 top-[105%] shadow-lg" />
+					<CarouselPrevious className="left-auto right-12 top-[105%] shadow-lg" />
+					<CarouselNext className="right-0 top-[105%] shadow-lg" />
 				</Carousel>
 			</div>
 		</div>
