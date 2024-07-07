@@ -7,14 +7,17 @@ import ReactFlow, {
 	Position,
 	useEdgesState,
 	useNodesState,
+	NodeProps,
+	NodeMouseHandler,
+	BackgroundVariant,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
 type Props = {
-    label: string;
+	label: string;
 };
 
-const CustomNode = ( data :Props) => {
+const CustomNode = ({ data }: NodeProps) => {
 	return (
 		<div
 			style={{
@@ -43,7 +46,7 @@ const CustomNode = ( data :Props) => {
 	);
 };
 
-type initialNodesType =  {
+type initialNodesType = {
 	id: string;
 	position: {
 		x: number;
@@ -55,9 +58,9 @@ type initialNodesType =  {
 	type: string;
 	targetPosition?: Position | undefined;
 	sourcePosition?: Position | undefined;
-} 	
+};
 
-const initialNodes:initialNodesType[] = [
+const initialNodes: initialNodesType[] = [
 	{
 		id: "1",
 		position: { x: 50, y: 60 },
@@ -109,6 +112,7 @@ export const enum GateTypes {
 type BasicGatesProps = {
 	gateTypes: GateTypes;
 };
+
 export default function BasicGates({ gateTypes }: BasicGatesProps) {
 	switch (gateTypes) {
 		case GateTypes.AND:
@@ -128,10 +132,10 @@ export default function BasicGates({ gateTypes }: BasicGatesProps) {
 			break;
 	}
 
-	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes );
+	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-	const handleNodeClick = ( node: { type: string; id: string; }) => {
+	const handleNodeClick: NodeMouseHandler = (event, node) => {
 		if (node.type === "output") {
 			setNodes((nds) => {
 				const updatedNodes = nds.map((n) => {
@@ -222,7 +226,7 @@ export default function BasicGates({ gateTypes }: BasicGatesProps) {
 					onNodeClick={handleNodeClick} // Register the custom node type
 				>
 					<Background
-						variant="dots"
+						variant={BackgroundVariant.Dots}
 						gap={12}
 						size={1}
 						color="#000000"
