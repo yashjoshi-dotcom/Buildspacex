@@ -8,7 +8,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { CrossIcon, Menu } from "lucide-react";
 
 function Navbar() {
 	return (
@@ -21,7 +21,7 @@ function Navbar() {
 					</h1>
 					<Sheet>
 						<SheetTrigger>
-							<Menu />
+							<Menu/>
 						</SheetTrigger>
 						<SheetContent side="top" className="h-full">
 							<SheetDescription className="flex h-full w-full flex-col items-center justify-center">
@@ -56,7 +56,7 @@ function Navbar() {
 												className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
 												href="#"
 											>
-												Mentor
+												Mentors
 											</Link>
 										</li>
 									</ul>
