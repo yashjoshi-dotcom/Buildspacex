@@ -6,7 +6,7 @@ export default function Page() {
   return (
 	<main>
 	<Navbar />
-    <div className="mx-auto max-w-2xl px-4 py-8">
+    <div className="mt-16 mx-auto max-w-2xl px-4 py-8">
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-4">Logic Gates</h2>
         <p className="mb-6">

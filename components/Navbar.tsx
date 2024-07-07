@@ -12,7 +12,7 @@ import { Menu } from "lucide-react";
 
 function Navbar() {
 	return (
-		<div className="fixed left-0 top-0 flex h-20 w-full items-center justify-center bg-white px-4 shadow xl:px-0">
+		<div className="fixed z-50 left-0 top-0 flex h-20 w-full items-center justify-center bg-white px-4 shadow xl:px-0">
 			{/* Small screen */}
 			<div className="w-full md:hidden">
 				<div className="flex w-full shrink items-center justify-between">
