@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HomeSection from "./_components/HomeSection";
 import PopularCoursesSection from "./_components/PopularCoursesSection";
+import FooterSection from "./_components/FooterSection";
 
 export default function Home() {
 	return (
@@ -9,6 +10,7 @@ export default function Home() {
 				<Navbar />
 				<HomeSection />
 				<PopularCoursesSection />
+				<FooterSection />
 			</div>
 		</main>
 	);
