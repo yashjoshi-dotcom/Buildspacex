@@ -42,27 +42,27 @@ const CustomNode = ({ data }) => {
 const initialNodes = [
 	{
 		id: "1",
-		position: { x: 0, y: 0 },
+		position: { x: 50, y: 60 },
 		data: { label: "0" },
 		type: "output",
 		targetPosition: "right",
 	},
 	{
 		id: "2",
-		position: { x: 0, y: 100 },
+		position: { x: 50, y: 180 },
 		data: { label: "0" },
 		type: "output",
 		targetPosition: "right",
 	},
 	{
 		id: "3",
-		position: { x: 200, y: 50 },
+		position: { x: 250, y: 120 },
 		data: { label: "AND" },
 		type: "andNode", // Specify the custom node type
 	},
 	{
 		id: "4",
-		position: { x: 300, y: 50 },
+		position: { x: 325, y: 120 },
 		data: { label: "0" },
 		type: "input",
 		sourcePosition: "left",
@@ -193,7 +193,7 @@ export default function BasicGates({ gateTypes }: BasicGatesProps) {
 
 	return (
 		<div className="flex h-full w-full items-center justify-center">
-			<div className="h-96 w-9/12">
+			<div className="h-72 w-9/12">
 				<ReactFlow
 					nodes={nodes}
 					edges={edges}
