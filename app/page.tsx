@@ -1,12 +1,13 @@
-import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import HomeSection from "./_components/HomeSection";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-center gap-4 p-24">
-			<Navbar />
-			<p>Hello World</p>
-			<Button size="lg">Hey</Button>
+		<main className="min-h-screen">
+			<div className="mt-12 px-4 xl:px-0">
+				<Navbar />
+				<HomeSection />
+			</div>
 		</main>
 	);
 }
