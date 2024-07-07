@@ -15,10 +15,10 @@ function HomeSection() {
 						</h1>
 					</div>
 					<p className="w-full px-4 md:w-10/12 md:px-0">
-						Let&apos;s take an online course to improve your skills in a
-						different way, you can set your own study time according
-						to your learning speed. So you san study comfortable and
-						absorb tge material easily.
+						Let&apos;s take an online course to improve your skills
+						in a different way, you can set your own study time
+						according to your learning speed. So you san study
+						comfortable and absorb tge material easily.
 					</p>
 					<div className="space-x-4">
 						<Button size="lg">Get Started</Button>
@@ -35,24 +35,24 @@ function HomeSection() {
 					/>
 				</div>
 			</div>
-			<Card className="w-full max-w-6xl border-none shadow-xl">
-				<CardContent className="flex w-full items-center justify-around gap-4 text-nowrap px-0 py-8">
-					<div className="flex flex-col items-center gap-4">
+			<Card className="mt-4 w-full max-w-3xl border-none shadow-xl">
+				<CardContent className="flex w-full justify-around gap-4 text-nowrap px-2 py-6 text-center text-2xl">
+					<div className="flex flex-col items-center justify-center gap-4">
 						<p className="text-4xl font-bold text-primary">10k+</p>
 						<p className="font-semibold text-muted-foreground">
 							Student
 						</p>
 					</div>
-					<div className="flex flex-col items-center gap-4">
+					<div className="flex flex-col items-center justify-center gap-4">
 						<p className="text-4xl font-bold text-primary">20+</p>
 						<p className="font-semibold text-muted-foreground">
 							Courses
 						</p>
 					</div>
-					<div className="flex flex-col items-center gap-4">
+					<div className="flex flex-col items-center justify-center gap-4">
 						<p className="text-4xl font-bold text-primary">10+</p>
 						<p className="font-semibold text-muted-foreground">
-							Experienced Mentors
+							Mentors
 						</p>
 					</div>
 				</CardContent>
