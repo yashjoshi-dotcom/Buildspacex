@@ -30,7 +30,10 @@ function CourseCardCarousel({
 				<CardContent className="flex flex-col gap-2">
 					<div className="flex gap-1">
 						{Array.from({ length: starRating }).map((_, index) => (
-							<Star className="fill-primary text-primary" />
+							<Star
+								key={index}
+								className="fill-primary text-primary"
+							/>
 						))}
 					</div>
 					<div className="flex items-center justify-between">
