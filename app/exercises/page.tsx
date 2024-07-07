@@ -1,5 +1,6 @@
 "use client";
 
+import test from "node:test";
 import { useCallback } from "react";
 import ReactFlow, {
 	addEdge,
@@ -63,14 +64,18 @@ const initialNodes = [
 	},
 	{
 		id: "4",
-		position: { x: 400, y: 50 },
+		position: { x: 300, y: 50 },
 		data: { label: "0" },
 		type: "input",
 		sourcePosition: "left",
 	},
 ];
 
-const initialEdges = [];
+const initialEdges = [
+	{ id: "e1-gate", source: "3", sourceHandle: "a", target: "1" },
+	{ id: "e2-gate", source: "3", sourceHandle: "b", target: "2" },
+	{ id: "e3-output", source: "4", sourceHandle: "c", target: "3" },
+];
 
 const nodeTypes = {
 	andNode: AndNode,
@@ -80,15 +85,10 @@ export default function Page() {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-	const onConnect = useCallback(
-		(params) => setEdges((eds) => addEdge(params, eds)),
-		[setEdges],
-	);
-
 	const handleNodeClick = (event, node) => {
 		if (node.type === "output") {
-			setNodes((nds) =>
-				nds.map((n) => {
+			setNodes((nds) => {
+				const updatedNodes = nds.map((n) => {
 					if (n.id === node.id) {
 						const newLabel = n.data.label === "1" ? "0" : "1";
 						return {
@@ -97,8 +97,25 @@ export default function Page() {
 						};
 					}
 					return n;
-				}),
-			);
+				});
+
+				const allOutputsAreOne = updatedNodes
+					.filter((n) => n.type === "output")
+					.every((n) => n.data.label === "1");
+
+				return updatedNodes.map((n) => {
+					if (n.type === "input") {
+						return {
+							...n,
+							data: {
+								...n.data,
+								label: allOutputsAreOne ? "1" : "0",
+							},
+						};
+					}
+					return n;
+				});
+			});
 		}
 	};
 
@@ -109,7 +126,6 @@ export default function Page() {
 				edges={edges}
 				onNodesChange={onNodesChange}
 				onEdgesChange={onEdgesChange}
-				onConnect={onConnect}
 				nodeTypes={nodeTypes}
 				onNodeClick={handleNodeClick} // Register the custom node type
 			>
