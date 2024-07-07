@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 function HomeSection() {
 	return (
@@ -21,8 +22,10 @@ function HomeSection() {
 						comfortable and absorb tge material easily.
 					</p>
 					<div className="space-x-4">
-						<Button size="lg">Get Started</Button>
-						<Button size="lg" variant="outline">
+						<Button size="lg">
+							<Link href="/exercises">Get Started</Link>
+						</Button>
+						<Button disabled={true} size="lg" variant="outline">
 							Watch video
 						</Button>
 					</div>
