@@ -1,6 +1,5 @@
 "use client";
 
-import { init } from "next/dist/compiled/webpack/webpack";
 import ReactFlow, {
 	Background,
 	Handle,

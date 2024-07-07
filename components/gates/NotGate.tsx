@@ -1,16 +1,18 @@
 "use client";
 
-import { init } from "next/dist/compiled/webpack/webpack";
 import ReactFlow, {
 	Background,
 	Handle,
 	Position,
 	useEdgesState,
 	useNodesState,
+	NodeProps,
+	NodeMouseHandler,
+	BackgroundVariant,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
-const CustomNode = ({ data }) => {
+const CustomNode = ({ data }: NodeProps) => {
 	return (
 		<div
 			style={{
@@ -33,13 +35,27 @@ const CustomNode = ({ data }) => {
 	);
 };
 
-const initialNodes = [
+type initialNodesType = {
+	id: string;
+	position: {
+		x: number;
+		y: number;
+	};
+	data: {
+		label: string;
+	};
+	type: string;
+	targetPosition?: Position | undefined;
+	sourcePosition?: Position | undefined;
+};
+
+const initialNodes: initialNodesType[] = [
 	{
 		id: "1",
 		position: { x: 0, y: 50 },
 		data: { label: "0" },
 		type: "output",
-		targetPosition: "right",
+		targetPosition: Position.Right,
 	},
 	{
 		id: "3",
@@ -52,7 +68,7 @@ const initialNodes = [
 		position: { x: 300, y: 50 },
 		data: { label: "1" },
 		type: "input",
-		sourcePosition: "left",
+		sourcePosition: Position.Left,
 	},
 ];
 
@@ -70,7 +86,7 @@ export default function NotGate() {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-	const handleNodeClick = (event, node) => {
+	const handleNodeClick: NodeMouseHandler = (event, node) => {
 		if (node.type === "output") {
 			setNodes((nds) => {
 				const updatedNodes = nds.map((n) => {
@@ -116,7 +132,7 @@ export default function NotGate() {
 					onNodeClick={handleNodeClick} // Register the custom node type
 				>
 					<Background
-						variant="dots"
+						variant={BackgroundVariant.Dots}
 						gap={12}
 						size={1}
 						color="#000000"
