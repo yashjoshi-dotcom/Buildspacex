@@ -10,7 +10,11 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 
-const CustomNode = ({ data }) => {
+type Props = {
+    label: string;
+};
+
+const CustomNode = ( data :Props) => {
 	return (
 		<div
 			style={{
@@ -39,33 +43,48 @@ const CustomNode = ({ data }) => {
 	);
 };
 
-const initialNodes = [
+type initialNodesType =  {
+	id: string;
+	position: {
+		x: number;
+		y: number;
+	};
+	data: {
+		label: string;
+	};
+	type: string;
+	targetPosition?: Position | undefined;
+	sourcePosition?: Position | undefined;
+} 	
+
+const initialNodes:initialNodesType[] = [
 	{
 		id: "1",
 		position: { x: 50, y: 60 },
 		data: { label: "0" },
 		type: "output",
-		targetPosition: "right",
+		targetPosition: Position.Right,
 	},
 	{
 		id: "2",
 		position: { x: 50, y: 180 },
 		data: { label: "0" },
 		type: "output",
-		targetPosition: "right",
+		targetPosition: Position.Right,
 	},
 	{
 		id: "3",
 		position: { x: 250, y: 120 },
 		data: { label: "AND" },
 		type: "andNode", // Specify the custom node type
+		targetPosition: undefined,
 	},
 	{
 		id: "4",
 		position: { x: 325, y: 120 },
 		data: { label: "0" },
 		type: "input",
-		sourcePosition: "left",
+		sourcePosition: Position.Left,
 	},
 ];
 
@@ -109,10 +128,10 @@ export default function BasicGates({ gateTypes }: BasicGatesProps) {
 			break;
 	}
 
-	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes );
 	const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-	const handleNodeClick = (event, node) => {
+	const handleNodeClick = ( node: { type: string; id: string; }) => {
 		if (node.type === "output") {
 			setNodes((nds) => {
 				const updatedNodes = nds.map((n) => {

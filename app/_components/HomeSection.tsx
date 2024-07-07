@@ -15,7 +15,7 @@ function HomeSection() {
 						</h1>
 					</div>
 					<p className="w-full px-4 md:w-10/12 md:px-0">
-						Let's take an online course to improve your skills in a
+						Let&apos;s take an online course to improve your skills in a
 						different way, you can set your own study time according
 						to your learning speed. So you san study comfortable and
 						absorb tge material easily.
