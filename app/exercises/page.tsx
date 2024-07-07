@@ -120,17 +120,19 @@ export default function Page() {
 	};
 
 	return (
-		<div style={{ width: "100vw", height: "100vh" }}>
-			<ReactFlow
-				nodes={nodes}
-				edges={edges}
-				onNodesChange={onNodesChange}
-				onEdgesChange={onEdgesChange}
-				nodeTypes={nodeTypes}
-				onNodeClick={handleNodeClick} // Register the custom node type
-			>
-				<Background variant="dots" gap={12} size={1} />
-			</ReactFlow>
+		<div className="flex h-full w-full items-center justify-center">
+			<div className="h-96 w-9/12">
+				<ReactFlow
+					nodes={nodes}
+					edges={edges}
+					onNodesChange={onNodesChange}
+					onEdgesChange={onEdgesChange}
+					nodeTypes={nodeTypes}
+					onNodeClick={handleNodeClick} // Register the custom node type
+				>
+					<Background variant="dots" gap={12} size={1} />
+				</ReactFlow>
+			</div>
 		</div>
 	);
 }
