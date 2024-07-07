@@ -202,7 +202,12 @@ export default function BasicGates({ gateTypes }: BasicGatesProps) {
 					nodeTypes={NodeTypes}
 					onNodeClick={handleNodeClick} // Register the custom node type
 				>
-					<Background variant="dots" gap={12} size={1} />
+					<Background
+						variant="dots"
+						gap={12}
+						size={1}
+						color="#000000"
+					/>
 				</ReactFlow>
 			</div>
 		</div>
