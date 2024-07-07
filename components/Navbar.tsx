@@ -12,10 +12,10 @@ import { Menu } from "lucide-react";
 
 function Navbar() {
 	return (
-		<div className="fixed left-0 top-0 flex w-full items-center justify-center">
+		<div className="fixed left-0 top-0 flex h-20 w-full items-center justify-center px-4 xl:px-0">
 			{/* Small screen */}
 			<div className="w-full md:hidden">
-				<div className="flex w-full shrink items-center justify-between p-6">
+				<div className="flex w-full shrink items-center justify-between">
 					<h1 className="text-2xl font-semibold">
 						Brain<span className="text-primary">Fuzz</span>
 					</h1>
@@ -73,12 +73,12 @@ function Navbar() {
 				</div>
 			</div>
 			{/* Large Screen */}
-			<div className="hidden w-full max-w-7xl shrink items-center justify-between p-6 md:flex">
+			<div className="hidden w-full max-w-6xl shrink items-center justify-between py-6 md:flex">
 				<h1 className="text-2xl font-semibold">
 					Brain<span className="text-primary">Fuzz</span>
 				</h1>
 				<nav>
-					<ul className="flex gap-6">
+					<ul className="flex gap-8">
 						<li>
 							<Link
 								className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
