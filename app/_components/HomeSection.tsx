@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 function HomeSection() {
 	return (
-		<section className="flex w-full flex-col items-center justify-center gap-4 pt-8 md:pt-12">
+		<section className="flex w-full flex-col items-center justify-center gap-4 px-4 pt-8 md:pt-12">
 			<div className="flex max-w-6xl flex-col gap-4 md:flex-row md:gap-0">
 				<div className="flex w-full flex-col gap-4 text-center md:max-w-[60%] md:justify-center md:gap-6 md:text-left">
 					<div className="px-4 text-4xl font-semibold leading-tight md:px-0 md:text-6xl md:leading-tight lg:text-7xl lg:leading-tight">
