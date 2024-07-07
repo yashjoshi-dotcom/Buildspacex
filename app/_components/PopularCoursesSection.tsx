@@ -8,7 +8,7 @@ import {
 
 function PopularCoursesSection() {
 	return (
-		<div className="my-12 border bg-muted py-16">
+		<div className="mt-12 border bg-muted py-16">
 			<div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-12 p-2 xl:flex-row xl:justify-between">
 				<div>
 					<h1 className="text-center text-5xl font-semibold leading-normal xl:w-min xl:text-left">
