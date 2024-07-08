@@ -7,8 +7,9 @@ import {
 import TestimonialCard from "@/components/cards/TestimonialCard";
 
 function TestimonialsSection() {
+	
 	return (
-		<section className="mx-auto my-4 flex w-full max-w-6xl px-4 py-16 md:my-0">
+		<section id="testimonial" className="mx-auto my-4 flex w-full max-w-6xl px-4 py-16 md:my-0">
 			<div className="flex flex-col items-center justify-start gap-16 md:items-start">
 				<h1 className="text-center text-4xl font-semibold capitalize leading-tight md:text-left md:text-5xl">
 					Testimonial What our{" "}
@@ -30,7 +31,7 @@ function TestimonialsSection() {
 							personJobRole="Full stack developer"
 							personName="Elder"
 							testimonialHeading="Great Quality"
-							personTestimonial="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+							personTestimonial="Lorem ipsum dolor sit amet consectetur adipisicing elit.
 												Assumenda iure nulla perspiciatis natus minus. Eius
 												doloribus sunt, non exercitationem neque dolores laborum
 												dolorum?"
@@ -40,7 +41,7 @@ function TestimonialsSection() {
 							personJobRole="Frontend developer"
 							personName="Yuvraj"
 							testimonialHeading="Value for money"
-							personTestimonial="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+							personTestimonial="Lorem ipsum dolor sit amet consectetur adipisicing elit.
 												doloribus sunt, non exercitationem neque dolores laborum
 												architecto sequi, sed suscipit repudiandae tempore quaerat
 												dolorum?"
@@ -50,7 +51,7 @@ function TestimonialsSection() {
 							personJobRole="Backend Engineer"
 							personName="Yash"
 							testimonialHeading="Best website for learning"
-							personTestimonial="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+							personTestimonial="Lorem ipsum dolor sit amet consectetur adipisicing elit.
 												Assumenda iure nulla perspiciatis natus minus. Eius
 												doloribus sunt, non exercitationem neque dolores laborum
 												dolorum?"
@@ -67,6 +68,7 @@ function TestimonialsSection() {
 				/>
 			</div>
 		</section>
+
 	);
 }
 

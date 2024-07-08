@@ -25,8 +25,9 @@ function HomeSection() {
 						<Button size="lg">
 							<Link href="/exercises">Get Started</Link>
 						</Button>
-						<Button disabled={true} size="lg" variant="outline">
-							Watch video
+						<Button size="lg" variant="outline">
+						<Link href="/courses">Go to current course</Link>
+
 						</Button>
 					</div>
 				</div>

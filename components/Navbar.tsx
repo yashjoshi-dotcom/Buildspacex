@@ -14,25 +14,25 @@ import NavLink from "./Navlink";
 const navLinks = [
 	{
 		title: "Home",
-		path: "#home",
+		path: "/",
 	},
 	{
 		title: "Courses",
-		path: "#courses",
+		path: "/#courses",
 	},
 	{
 		title: "Testimonial",
-		path: "#testimonial",
+		path: "/#testimonial",
 	},
 	{
 		title: "Mentor",
-		path: "#mentor",
+		path: "/#mentor",
 	},
 ];
 
 function Navbar() {
 	return (
-		<div className="fixed z-50 left-0 top-0 flex h-20 w-full items-center justify-center bg-white px-4 shadow xl:px-0">
+		<div className="fixed left-0 top-0 z-50 flex h-20 w-full items-center justify-center bg-white px-4 shadow xl:px-0">
 			{/* Small screen */}
 			<div className="w-full md:hidden">
 				<div className="flex w-full shrink items-center justify-between">
@@ -74,10 +74,14 @@ function Navbar() {
 					Brain<span className="text-primary">Fuzz</span>
 				</h1>
 				<nav>
-					<ul className="flex gap-6 ">
+					<ul className="flex gap-6">
 						{navLinks.map((link, index) => (
 							<li key={index}>
-								<NavLink href={link.path} title={link.title} />
+								<NavLink
+									href={link.path}
+									title={link.title}
+									id={link.id}
+								/>
 							</li>
 						))}
 					</ul>
