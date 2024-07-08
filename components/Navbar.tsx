@@ -9,6 +9,26 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import NavLink from "./Navlink";
+
+const navLinks = [
+	{
+		title: "Home",
+		path: "#home",
+	},
+	{
+		title: "Courses",
+		path: "#courses",
+	},
+	{
+		title: "Testimonial",
+		path: "#testimonial",
+	},
+	{
+		title: "Mentor",
+		path: "#mentor",
+	},
+];
 
 function Navbar() {
 	return (
@@ -27,38 +47,14 @@ function Navbar() {
 							<SheetDescription className="flex h-full w-full flex-col items-center justify-center">
 								<nav className="flex grow items-center">
 									<ul className="flex flex-col gap-6 text-center">
-										<li>
-											<Link
-												className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-												href="#"
-											>
-												Home
-											</Link>
-										</li>
-										<li>
-											<Link
-												className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-												href="#"
-											>
-												Courses
-											</Link>
-										</li>
-										<li>
-											<Link
-												className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-												href="#"
-											>
-												Testimonial
-											</Link>
-										</li>
-										<li>
-											<Link
-												className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-												href="#"
-											>
-												Mentor
-											</Link>
-										</li>
+										{navLinks.map((link, index) => (
+											<li key={index}>
+												<NavLink
+													href={link.path}
+													title={link.title}
+												/>
+											</li>
+										))}
 									</ul>
 								</nav>
 								<div className="flex shrink gap-4">
@@ -78,39 +74,12 @@ function Navbar() {
 					Brain<span className="text-primary">Fuzz</span>
 				</h1>
 				<nav>
-					<ul className="flex gap-8">
-						<li>
-							<Link
-								className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-								href="#"
-							>
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link
-								className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-								href="#"
-							>
-								Courses
-							</Link>
-						</li>
-						<li>
-							<Link
-								className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-								href="#"
-							>
-								Testimonial
-							</Link>
-						</li>
-						<li>
-							<Link
-								className="font-semibold hover:underline hover:decoration-primary hover:underline-offset-4"
-								href="#"
-							>
-								Mentor
-							</Link>
-						</li>
+					<ul className="flex gap-6 ">
+						{navLinks.map((link, index) => (
+							<li key={index}>
+								<NavLink href={link.path} title={link.title} />
+							</li>
+						))}
 					</ul>
 				</nav>
 				<div className="flex shrink gap-4">
